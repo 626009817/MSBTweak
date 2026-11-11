@@ -295,7 +295,6 @@ NSDictionary *MSBPhotoMetadataForSize(NSDictionary *metadata, size_t width, size
     CGImageRef cgImage = source ? CGImageSourceCreateThumbnailAtIndex(source, 0, (__bridge CFDictionaryRef)@{
         (id)kCGImageSourceCreateThumbnailFromImageAlways: @YES,
         (id)kCGImageSourceCreateThumbnailWithTransform: @YES,
-        (id)kCGImageSourceThumbnailMaxPixelSize: @4096,
         (id)kCGImageSourceShouldCacheImmediately: @YES
     }) : NULL;
     NSDictionary *properties = source ? CFBridgingRelease(CGImageSourceCopyPropertiesAtIndex(source, 0, NULL)) : nil;
